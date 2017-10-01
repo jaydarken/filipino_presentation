@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
+
 /**
  * TweetRepository
  *
@@ -10,4 +12,14 @@ namespace AppBundle\Repository;
  */
 class TweetRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function getNewTweets($lastId){
+        $query = $this->createQueryBuilder('t')
+            ->where('t.id > :id')
+            ->setParameter('id', $lastId)
+            ->orderBy('t.id', 'ASC')
+            ->getQuery();
+        
+        return $query->getArrayResult();
+    }
 }

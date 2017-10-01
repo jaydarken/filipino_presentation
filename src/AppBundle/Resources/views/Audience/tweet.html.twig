@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Audience:tweet{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        <div class="container z-depth-2" style="padding:20px; margin-top:10px; border-radius:15px 15px;">
+            <div class="row center-align" style="margin:auto auto;">
+                <img class="col s12" src="{{ asset('logo.png') }}" style="margin:auto auto; max-height:120px; width:100%">
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    {{ form_widget(form.name, { "attr": { "class": "validate " } }) }}
+                    {{ form_label(form.name,'Name', { "label_attr": {'data-error': 'Please Fill The Name' } }) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">message</i>
+                    {{ form_widget(form.message, { "attr": { "class": "validate " } }) }}
+                    {{ form_label(form.message, 'Message', { "label_attr": {'data-error': 'Please Fill The Name' } }) }}
+                </div>
+            </div>
+            <div class="row">
+                <div id="msg" class="col s8 center-align green-text" style="display:none;">
+                    {{msg}}
+                </div>
+                <input type="submit" class="col s3 btn orange lighten-2 right" value="SEND">
+            </div>
+        </div>
+        {{ form_widget(form._token) }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var msg = "{{msg}}";
+    </script>
+    <script src="{{ asset('js/tweet.js') }}"></script>
+{% endblock %}
