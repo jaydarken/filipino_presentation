@@ -2,9 +2,9 @@
 parameters:
     database_host: 127.0.0.1
     database_port: 5432
-    database_name: shiela
-    database_user: shiela
-    database_password: qweasd
+    database_name: fil 
+    database_user: rjay 
+    database_password: "015342102298" 
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
