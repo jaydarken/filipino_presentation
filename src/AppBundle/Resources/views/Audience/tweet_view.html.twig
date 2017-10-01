@@ -3,13 +3,34 @@
 {% block title %}Tweets{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row" id="tweets">
+        <div class="container">
+            <div class="row">
 
+                <div class="row col s12" id="tweets" >
+
+                </div>
+            </div>
         </div>
+    <div style="background-color:rgba(10,10,10,.9); color:white;position:fixed; bottom:0; width:100%; padding:5px;" class="center-align">
+        Sali kaya sa usapan. Komonikta lamang sa aming network <span class="yellow-text">Magandang Buhay!</span> at pumunta sa <span class="yellow-text">192.168.10.100:8000</span> at ang password ay 
+        <span class="yellow-text">#mbucban2017</span>
     </div>
+
 {% endblock %}
 
 {% block javascripts %}
     <script src="{{ asset('js/tweet-view.js') }}"></script>
+{% endblock %}
+{% block stylesheets %}
+<style rel="text/css">
+body {
+    height: 100%; 
+    background-image:url("{{ asset('home.jpg') }}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment:fixed;
+}
+</style>
+
 {% endblock %}

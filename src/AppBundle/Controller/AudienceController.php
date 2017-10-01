@@ -18,6 +18,7 @@ class AudienceController extends Controller
     public function tweetAction(Request $request)
     {
         $msg = $request->query->get('msg');
+        $name = $request->query->get('name');
         $tweet = new Tweet();
         $form = $this->createForm(TweetType::class, $tweet);
         $form->handleRequest($request);
@@ -29,12 +30,13 @@ class AudienceController extends Controller
             $em->persist($tweet);
             $em->flush();
     
-            return $this->redirectToRoute('tweet', [ 'msg' => 'Successfuly Sent!' ]);
+            return $this->redirectToRoute('tweet', [ 'msg' => 'Successfuly Sent!', 'name' => $form->getData()->getName() ]);
         }
 
         return $this->render('AppBundle:Audience:tweet.html.twig', [ 
             "form" => $form->createView(),
             "msg" => $msg,
+            "name" => $name
         ]);
     }
 
