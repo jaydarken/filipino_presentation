@@ -3,10 +3,10 @@ $("body").keypress(function(event) {
 
     if(code == 49) {
         $("#music").trigger("pause");
-        location.href = "/timer";
+        location.href = "/";
     } else if(code == 50) {
         $("#music").trigger("pause");
-        location.href = "/tweets";
+        location.href = "/tweet/view";
     } else if(code == 51) {
         $("#music").trigger("pause");
         location.href = "/timer";
