@@ -12,5 +12,8 @@ $("body").keypress(function(event) {
         location.href = "/timer";
     } else if(code == 52) {
         $("#music").trigger("play");
+    } else if(code == 48) {
+        $("#music").trigger("pause");
     }
+
 });

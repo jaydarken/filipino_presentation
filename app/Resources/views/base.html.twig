@@ -16,12 +16,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
+        <audio id="music"><source src="{{ asset('music/Intro.mp3')}}" type="audio/mpeg" /></audio>
         {% block body %}{% endblock %}
 
         <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/font-awesome.js') }}"></script>
-
+        <script src="{{ asset('js/keys.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

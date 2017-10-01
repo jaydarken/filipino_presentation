@@ -1,4 +1,4 @@
-var limit = 5;
+var limit = 30;
 var sec = 0;
 
 var x = setInterval(function() {
